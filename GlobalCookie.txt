@@ -1,0 +1,14 @@
+When User deleted the cookie manually then we can set it back after login to the website 
+
+
+
+// Get the Golable Cookie using identifier which is a contact id
+                
+Contact contact = contactRepository.LoadContactReadOnly(identifier);
+                
+string globalCookieValue = contact.ContactId.ToString();
+
+               
+ // Set the Contact ID as Global Cookie Value
+               
+ HttpContext.Current.Response.Cookies["SC_ANALYTICS_GLOBAL_COOKIE"].Value = globalCookieValue;
